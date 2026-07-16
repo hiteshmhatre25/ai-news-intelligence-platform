@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: ai-news-intel
+  profiles:
+    active: local
+
+server:
+  port: 8080
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+
+jwt:
+  secret: ${JWT_SECRET}
+  expiration-ms: 86400000 # 24 hours
+
+news:
+  feeds:
+    - name: BBC News
+      url: http://feeds.bbci.co.uk/news/rss.xml
+    - name: TechCrunch
+      url: https://techcrunch.com/feed/
+    - name: The Hindu
+      url: https://www.thehindu.com/news/national/feeder/default.rss
+
+gemini:
+  api-key: ${GEMINI_API_KEY}
