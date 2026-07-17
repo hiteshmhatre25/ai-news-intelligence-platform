@@ -55,6 +55,27 @@ public class NewsFetchService {
                 ? entry.getPublishedDate().toInstant()
                 : Instant.now();
 
+<<<<<<< HEAD
+        return new FetchedArticle(
+                entry.getTitle(), entry.getLink(), description, publishedAt, sourceName, resolveCategory(entry, sourceName)
+        );
+    }
+
+    private String resolveCategory(SyndEntry entry, String sourceName) {
+        if (!entry.getCategories().isEmpty()) {
+            return entry.getCategories().get(0).getName();
+        }
+        return defaultCategoryFor(sourceName);
+    }
+
+    private String defaultCategoryFor(String sourceName) {
+        return switch (sourceName) {
+            case "TechCrunch" -> "Technology";
+            case "The Hindu" -> "National";
+            default -> "World";
+        };
+=======
         return new FetchedArticle(entry.getTitle(), entry.getLink(), description, publishedAt, sourceName);
+>>>>>>> d83e456c436d41d0fcbee5a86a908340a5f93e86
     }
 }

@@ -31,6 +31,10 @@ public class ArticleService {
                         fetched.link(),
                         fetched.description(),
                         fetched.source(),
+<<<<<<< HEAD
+                        fetched.category(),
+=======
+>>>>>>> d83e456c436d41d0fcbee5a86a908340a5f93e86
                         fetched.publishedAt()
                 ))
                 .toList();
@@ -52,9 +56,20 @@ public class ArticleService {
         return ArticleResponse.from(article);
     }
 
+<<<<<<< HEAD
+    public Page<ArticleResponse> getArticles(int page, int size, String category) {
+        Pageable pageable = PageRequest.of(page, size, Sort.by(Sort.Direction.DESC, "publishedAt"));
+
+        Page<Article> articles = (category == null || category.isBlank())
+                ? articleRepository.findAll(pageable)
+                : articleRepository.findByCategory(category, pageable);
+
+        return articles.map(ArticleResponse::from);
+=======
     public Page<ArticleResponse> getArticles(int page, int size) {
         Pageable pageable = PageRequest.of(page, size, Sort.by(Sort.Direction.DESC, "publishedAt"));
         return articleRepository.findAll(pageable).map(ArticleResponse::from);
+>>>>>>> d83e456c436d41d0fcbee5a86a908340a5f93e86
     }
 
     public ArticleResponse getArticleById(Long id) {

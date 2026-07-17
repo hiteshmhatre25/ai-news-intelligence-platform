@@ -11,6 +11,10 @@ public record ArticleResponse(
         String description,
         String summary,
         String source,
+<<<<<<< HEAD
+        String category,
+=======
+>>>>>>> d83e456c436d41d0fcbee5a86a908340a5f93e86
         Instant publishedAt
 ) {
     public static ArticleResponse from(Article article) {
@@ -21,6 +25,10 @@ public record ArticleResponse(
                 article.getDescription(),
                 article.getSummary(),
                 article.getSource(),
+<<<<<<< HEAD
+                article.getCategory(),
+=======
+>>>>>>> d83e456c436d41d0fcbee5a86a908340a5f93e86
                 article.getPublishedAt()
         );
     }
