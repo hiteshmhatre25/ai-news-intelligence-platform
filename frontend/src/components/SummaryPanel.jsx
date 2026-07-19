@@ -31,31 +31,20 @@ function SummaryPanel({ article, onClose }) {
       />
 
       <div
-<<<<<<< HEAD
         className={`fixed top-0 right-0 h-full w-full sm:w-96 bg-white dark:bg-gray-800 shadow-xl z-50 transform transition-transform duration-300 flex flex-col ${
-=======
-        className={`fixed top-0 right-0 h-full w-full sm:w-96 bg-white shadow-xl z-50 transform transition-transform duration-300 flex flex-col ${
->>>>>>> d83e456c436d41d0fcbee5a86a908340a5f93e86
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
         {article && (
           <>
-<<<<<<< HEAD
             <div className="flex justify-between items-center p-5 border-b border-gray-100 dark:border-gray-700">
               <span className="text-xs font-medium text-blue-600 dark:text-blue-400">{article.source}</span>
               <button onClick={onClose} className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-xl leading-none">
-=======
-            <div className="flex justify-between items-center p-5 border-b border-gray-100">
-              <span className="text-xs font-medium text-blue-600">{article.source}</span>
-              <button onClick={onClose} className="text-gray-400 hover:text-gray-600 text-xl leading-none">
->>>>>>> d83e456c436d41d0fcbee5a86a908340a5f93e86
                 ×
               </button>
             </div>
 
             <div className="p-5 overflow-y-auto flex-grow">
-<<<<<<< HEAD
               <h2 className="font-semibold text-gray-800 dark:text-gray-100 mb-4">{article.title}</h2>
 
               <span className="text-xs text-purple-600 dark:text-purple-400 font-medium">✦ AI Summary</span>
@@ -63,26 +52,13 @@ function SummaryPanel({ article, onClose }) {
               {loading && <p className="text-sm text-gray-400 mt-2">Generating summary...</p>}
               {error && <p className="text-sm text-red-500 mt-2">{error}</p>}
               {summary && <p className="text-sm text-gray-600 dark:text-gray-300 mt-2 leading-relaxed">{summary}</p>}
-=======
-              <h2 className="font-semibold text-gray-800 mb-4">{article.title}</h2>
-
-              <span className="text-xs text-purple-600 font-medium">✦ AI Summary</span>
-
-              {loading && <p className="text-sm text-gray-400 mt-2">Generating summary...</p>}
-              {error && <p className="text-sm text-red-500 mt-2">{error}</p>}
-              {summary && <p className="text-sm text-gray-600 mt-2 leading-relaxed">{summary}</p>}
->>>>>>> d83e456c436d41d0fcbee5a86a908340a5f93e86
               {!loading && !error && !summary && (
                 <p className="text-sm text-gray-400 mt-2">No summary available for this article.</p>
               )}
             </div>
 
-<<<<<<< HEAD
             <div className="p-5 border-t border-gray-100 dark:border-gray-700">
-=======
-            <div className="p-5 border-t border-gray-100">
->>>>>>> d83e456c436d41d0fcbee5a86a908340a5f93e86
-              <a
+              
                 href={article.link}
                 target="_blank"
                 rel="noopener noreferrer"
