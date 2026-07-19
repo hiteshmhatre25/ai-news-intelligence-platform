@@ -5,11 +5,11 @@ spring:
     active: local
 
 server:
-  port: 8080
+  port: ${PORT:8080}
 
-logging:
-  level:
-    org.springframework.security: DEBUG
+app:
+  cors:
+    allowed-origin: ${ALLOWED_ORIGIN:http://localhost:5173}
 
 jwt:
   secret: ${JWT_SECRET}
@@ -21,7 +21,7 @@ news:
       url: http://feeds.bbci.co.uk/news/rss.xml
     - name: TechCrunch
       url: https://techcrunch.com/feed/
-    - name: The Hindu
+    - name: The Hindua
       url: https://www.thehindu.com/news/national/feeder/default.rss
 
 gemini:
