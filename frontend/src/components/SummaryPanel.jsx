@@ -25,36 +25,32 @@ function SummaryPanel({ article, onClose }) {
     <>
       <div
         onClick={onClose}
-        className={`fixed inset-0 bg-black/30 transition-opacity z-40 ${
-          isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
-        }`}
-      />
+        className={`fixed inset-0 bg-black/30 transition-opacity z-40 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+      ></div>
 
       <div
-        className={`fixed top-0 right-0 h-full w-full sm:w-96 bg-white dark:bg-gray-800 shadow-xl z-50 transform transition-transform duration-300 flex flex-col ${
-          isOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}
+        className={`fixed top-0 right-0 h-full w-full sm:w-96 bg-white dark:bg-gray-800 shadow-xl z-50 transform transition-transform duration-300 flex flex-col ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
       >
-        {article && (
-          <>
+        {article ? (
+          <div className="flex flex-col h-full">
             <div className="flex justify-between items-center p-5 border-b border-gray-100 dark:border-gray-700">
               <span className="text-xs font-medium text-blue-600 dark:text-blue-400">{article.source}</span>
               <button onClick={onClose} className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-xl leading-none">
-                ×
+                &times;
               </button>
             </div>
 
             <div className="p-5 overflow-y-auto flex-grow">
               <h2 className="font-semibold text-gray-800 dark:text-gray-100 mb-4">{article.title}</h2>
 
-              <span className="text-xs text-purple-600 dark:text-purple-400 font-medium">✦ AI Summary</span>
+              <span className="text-xs text-purple-600 dark:text-purple-400 font-medium">AI Summary</span>
 
-              {loading && <p className="text-sm text-gray-400 mt-2">Generating summary...</p>}
-              {error && <p className="text-sm text-red-500 mt-2">{error}</p>}
-              {summary && <p className="text-sm text-gray-600 dark:text-gray-300 mt-2 leading-relaxed">{summary}</p>}
-              {!loading && !error && !summary && (
+              {loading ? <p className="text-sm text-gray-400 mt-2">Generating summary...</p> : null}
+              {error ? <p className="text-sm text-red-500 mt-2">{error}</p> : null}
+              {summary ? <p className="text-sm text-gray-600 dark:text-gray-300 mt-2 leading-relaxed">{summary}</p> : null}
+              {!loading && !error && !summary ? (
                 <p className="text-sm text-gray-400 mt-2">No summary available for this article.</p>
-              )}
+              ) : null}
             </div>
 
             <div className="p-5 border-t border-gray-100 dark:border-gray-700">
@@ -67,8 +63,8 @@ function SummaryPanel({ article, onClose }) {
                 Read Full Article
               </a>
             </div>
-          </>
-        )}
+          </div>
+        ) : null}
       </div>
     </>
   )
