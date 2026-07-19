@@ -54,12 +54,7 @@ function SummaryPanel({ article, onClose }) {
             </div>
 
             <div className="p-5 border-t border-gray-100 dark:border-gray-700">
-              
-                href={article.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block text-center bg-blue-600 text-white rounded py-2 text-sm font-medium hover:bg-blue-700"
-              >
+              <a href={article.link} target="_blank" rel="noopener noreferrer" className="block text-center bg-blue-600 text-white rounded py-2 text-sm font-medium hover:bg-blue-700">
                 Read Full Article
               </a>
             </div>
