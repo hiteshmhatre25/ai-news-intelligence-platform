@@ -55,7 +55,6 @@ public class NewsFetchService {
                 ? entry.getPublishedDate().toInstant()
                 : Instant.now();
 
-<<<<<<< HEAD
         return new FetchedArticle(
                 entry.getTitle(), entry.getLink(), description, publishedAt, sourceName, resolveCategory(entry, sourceName)
         );
@@ -74,8 +73,5 @@ public class NewsFetchService {
             case "The Hindu" -> "National";
             default -> "World";
         };
-=======
-        return new FetchedArticle(entry.getTitle(), entry.getLink(), description, publishedAt, sourceName);
->>>>>>> d83e456c436d41d0fcbee5a86a908340a5f93e86
     }
 }
